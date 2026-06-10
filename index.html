@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yousef Abdo | Professional Graphic Designer</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Inter & Poppins for English, Cairo for Arabic -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Yousef <span>Abdo</span></a>
+            
+            <ul class="nav-links">
+                <li><a href="#home" data-i18n="nav_home">Home</a></li>
+                <li><a href="#about" data-i18n="nav_about">About</a></li>
+                <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+                <li><a href="#portfolio" data-i18n="nav_portfolio">Portfolio</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button id="lang-toggle" class="lang-toggle" aria-label="Toggle Language">
+                    AR
+                </button>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark/Light Mode">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="menu-toggle" aria-label="Toggle Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero section">
+        <div class="container hero-container">
+            <div class="hero-content fade-in">
+                <div class="badge" data-i18n="hero_badge">Professional Designer</div>
+                <h1 class="headline" data-i18n="hero_title">Graphic Designer Creating <span class="gradient-text">Powerful Visual Experiences</span></h1>
+                <p class="subheadline" data-i18n="hero_subtitle">Helping brands stand out through impactful visual identities, creative marketing designs, and professional digital experiences.</p>
+                <p class="motto" data-i18n="hero_motto">"Creativity, Quality, and Speed in Every Design."</p>
+                
+                <div class="hero-cta">
+                    <a href="#portfolio" class="btn btn-primary" data-i18n="btn_view_work">View My Work</a>
+                    <a href="#contact" class="btn btn-outline" data-i18n="btn_contact">Contact Me</a>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1M6mLCbcdD/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/201285844741" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="mailto:zezoyosef897@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            
+            <div class="hero-image fade-in">
+                <div class="image-wrapper">
+                    <!-- User Profile Image -->
+                    <img src="images/profile.jpg" alt="Yousef Abdo - Graphic Designer" class="floating">
+                    <div class="experience-badge">
+                        <span class="number">2+</span>
+                        <span class="text" data-i18n="exp_years">Years<br>Experience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title" data-i18n="section_about">About <span>Me</span></h2>
+                <div class="title-line"></div>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h3 data-i18n="about_name">Yousef Abdo | يوسف عبده</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> <span data-i18n="about_location">Mersa Matruh, Egypt</span></p>
+                    <p data-i18n="about_p1">Yousef Abdo is a passionate Graphic Designer with more than two years of freelance experience helping businesses and personal brands communicate visually through high-quality design.</p>
+                    <p data-i18n="about_p2">Known for combining creativity, speed, and quality to deliver outstanding results for clients.</p>
+                    
+                    <div class="goal-box">
+                        <i class="fas fa-rocket"></i>
+                        <div>
+                            <h4 data-i18n="future_goal_title">Future Goal</h4>
+                            <p data-i18n="future_goal_text">To build a leading creative agency providing world-class branding and design solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-stats fade-in">
+                    <div class="stat-card">
+                        <h4 class="counter" data-target="2">0</h4><span>+</span>
+                        <p data-i18n="stat_years">Years Experience</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4 class="counter" data-target="40">0</h4><span>+</span>
+                        <p data-i18n="stat_clients">Clients Served</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4 class="counter" data-target="100">0</h4><span>+</span>
+                        <p data-i18n="stat_designs">Designs Created</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>100%</h4>
+                        <p data-i18n="stat_quality">Commitment to Quality</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Expertise Section -->
+    <section id="skills" class="skills section bg-alt">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title" data-i18n="section_skills">My <span>Expertise</span></h2>
+                <div class="title-line"></div>
+            </div>
+            
+            <div class="skills-grid">
+                <!-- Core Expertise -->
+                <div class="skill-category fade-in">
+                    <div class="category-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3 data-i18n="core_expertise">Core Expertise</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="skill_social">Social Media Design</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="skill_logo">Logo Design</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="skill_brand">Brand Identity Design</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="skill_ads">Advertising Design</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="skill_product">Product Design</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="skill_print">Print Design</span></li>
+                    </ul>
+                </div>
+
+                <!-- Software Skills -->
+                <div class="skill-category fade-in" style="transition-delay: 0.2s">
+                    <div class="category-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3 data-i18n="design_software">Design Software</h3>
+                    <div class="software-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Adobe Photoshop</span>
+                                <span data-i18n="level_advanced">Advanced</span>
+                            </div>
+                            <div class="progress-line"><span style="width: 90%;"></span></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Adobe Illustrator</span>
+                                <span data-i18n="level_advanced">Advanced</span>
+                            </div>
+                            <div class="progress-line"><span style="width: 85%;"></span></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Canva</span>
+                                <span data-i18n="level_advanced">Advanced</span>
+                            </div>
+                            <div class="progress-line"><span style="width: 95%;"></span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Strengths -->
+                <div class="skill-category fade-in" style="transition-delay: 0.4s">
+                    <div class="category-icon"><i class="fas fa-star"></i></div>
+                    <h3 data-i18n="prof_strengths">Professional Strengths</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="strength_fast">Fast Delivery</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="strength_creative">Creative Thinking</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="strength_quality">High-Quality Design</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="strength_attention">Attention to Detail</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="strength_comm">Client Communication</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="strength_strategy">Brand Strategy</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Education Section -->
+    <section class="resume section">
+        <div class="container">
+            <div class="resume-grid">
+                <!-- Experience -->
+                <div class="resume-column fade-in">
+                    <h3 class="resume-title"><i class="fas fa-briefcase"></i> <span data-i18n="section_resume_exp">Experience</span></h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <h4 class="timeline-role" data-i18n="role_freelance">Freelance Graphic Designer</h4>
+                            <p class="timeline-duration" data-i18n="exp_duration">2+ Years | 40+ Clients Served</p>
+                            <ul class="timeline-highlights">
+                                <li data-i18n="exp_h1">Delivered branding solutions for diverse businesses</li>
+                                <li data-i18n="exp_h2">Created high-performing social media campaigns</li>
+                                <li data-i18n="exp_h3">Designed professional logos and visual identities</li>
+                                <li data-i18n="exp_h4">Produced advertising materials for digital and print platforms</li>
+                                <li data-i18n="exp_h5">Managed projects from concept to final delivery</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education & Languages -->
+                <div class="resume-column fade-in" style="transition-delay: 0.2s">
+                    <h3 class="resume-title"><i class="fas fa-graduation-cap"></i> <span data-i18n="section_resume_edu">Education</span></h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <h4 class="timeline-role" data-i18n="role_student">High School Student</h4>
+                            <p class="timeline-duration" data-i18n="edu_track">Scientific Mathematics Track</p>
+                        </div>
+                    </div>
+
+                    <h3 class="resume-title" style="margin-top: 2rem;"><i class="fas fa-language"></i> <span data-i18n="section_resume_lang">Languages</span></h3>
+                    <div class="languages-box">
+                        <div class="language-item">
+                            <span class="lang-name" data-i18n="lang_ar">Arabic</span>
+                            <span class="lang-level" data-i18n="level_excellent">Excellent</span>
+                        </div>
+                        <div class="language-item">
+                            <span class="lang-name" data-i18n="lang_en">English</span>
+                            <span class="lang-level" data-i18n="level_good">Good</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Projects Section -->
+    <section id="portfolio" class="portfolio section bg-alt">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title" data-i18n="section_portfolio">Selected <span>Projects</span></h2>
+                <div class="title-line"></div>
+            </div>
+            
+            <div class="projects-grid" id="dynamic-projects-grid">
+                <!-- Dynamic Projects from Backend -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title" data-i18n="section_contact">Get In <span>Touch</span></h2>
+                <div class="title-line"></div>
+                <p class="contact-subtitle" data-i18n="contact_subtitle">Let's create something amazing together.</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info-wrapper fade-in">
+                    <div class="contact-info-card">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-details">
+                            <h3 data-i18n="contact_email">Email Me</h3>
+                            <a href="mailto:zezoyosef897@gmail.com">zezoyosef897@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div class="contact-details">
+                            <h3 data-i18n="contact_wa">WhatsApp</h3>
+                            <a href="https://wa.me/201285844741" target="_blank">+20 128 584 4741</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-icon"><i class="fab fa-facebook-f"></i></div>
+                        <div class="contact-details">
+                            <h3 data-i18n="contact_fb">Facebook</h3>
+                            <a href="https://www.facebook.com/share/1M6mLCbcdD/" target="_blank">Yousef Abdo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form fade-in" onsubmit="event.preventDefault();">
+                    <div class="form-group">
+                        <input type="text" id="form-name" placeholder="Your Name" data-i18n-placeholder="form_name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="form-email" placeholder="Your Email" data-i18n-placeholder="form_email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="form-subject" placeholder="Subject" data-i18n-placeholder="form_subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="form-msg" placeholder="Your Message" data-i18n-placeholder="form_msg" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit-btn" data-i18n="btn_send">Send Message <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">Yousef <span>Abdo</span></a>
+                <p data-i18n="footer_desc">Professional Graphic Designer based in Egypt. Turning ideas into powerful visual identities.</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/share/1M6mLCbcdD/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/201285844741" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:zezoyosef897@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer_rights">&copy; <span id="current-year"></span> Yousef Abdo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>

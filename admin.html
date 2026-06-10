@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم | Portfolio Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --accent: #3b82f6;
+            --border: #334155;
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background: var(--card-bg);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .container {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--bg-color);
+            border: 1px solid var(--border);
+            color: white;
+            border-radius: 5px;
+            font-family: 'Cairo', sans-serif;
+        }
+        .btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            font-weight: bold;
+        }
+        .btn-danger {
+            background: #ef4444;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        .table th, .table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            text-align: right;
+        }
+        .table img {
+            width: 80px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h2>لوحة التحكم (Admin Panel)</h2>
+        <div>
+            <a href="/" target="_blank" class="btn" style="text-decoration:none; margin-left:10px;">عرض الموقع</a>
+            <button onclick="logout()" class="btn btn-danger">تسجيل الخروج</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h3>إضافة مشروع جديد</h3>
+            <form id="add-project-form">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label>عنوان المشروع (عربي)</label>
+                        <input type="text" id="title_ar" required>
+                    </div>
+                    <div class="form-group">
+                        <label>عنوان المشروع (إنجليزي)</label>
+                        <input type="text" id="title_en" required>
+                    </div>
+                    <div class="form-group">
+                        <label>التصنيف (عربي)</label>
+                        <input type="text" id="cat_ar" required>
+                    </div>
+                    <div class="form-group">
+                        <label>التصنيف (إنجليزي)</label>
+                        <input type="text" id="cat_en" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>وصف المشروع (عربي)</label>
+                    <textarea id="desc_ar" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>وصف المشروع (إنجليزي)</label>
+                    <textarea id="desc_en" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>الأدوات المستخدمة (مثال: Photoshop, Illustrator)</label>
+                    <input type="text" id="tools" required>
+                </div>
+                <div class="form-group">
+                    <label>صورة المشروع</label>
+                    <input type="file" id="image" accept="image/*" required>
+                </div>
+                <button type="submit" class="btn">حفظ المشروع</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h3>إدارة المشاريع الحالية</h3>
+            <table class="table" id="projects-table">
+                <thead>
+                    <tr>
+                        <th>الصورة</th>
+                        <th>العنوان</th>
+                        <th>التصنيف</th>
+                        <th>إجراء</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Projects will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Check Auth immediately
+        fetch('/api/check-auth').then(res => res.json()).then(data => {
+            if (!data.authenticated) window.location.href = '/login.html';
+        });
+
+        // Load Projects
+        async function loadProjects() {
+            const res = await fetch('/api/projects');
+            const projects = await res.json();
+            const tbody = document.querySelector('#projects-table tbody');
+            tbody.innerHTML = '';
+            projects.forEach(p => {
+                tbody.innerHTML += `
+                    <tr>
+                        <td><img src="/${p.image}" alt="project"></td>
+                        <td>${p.title_ar}</td>
+                        <td>${p.category_ar}</td>
+                        <td>
+                            <button onclick="deleteProject(${p.id})" class="btn btn-danger btn-sm">حذف</button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        // Add Project
+        document.getElementById('add-project-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData();
+            formData.append('title_ar', document.getElementById('title_ar').value);
+            formData.append('title_en', document.getElementById('title_en').value);
+            formData.append('category_ar', document.getElementById('cat_ar').value);
+            formData.append('category_en', document.getElementById('cat_en').value);
+            formData.append('desc_ar', document.getElementById('desc_ar').value);
+            formData.append('desc_en', document.getElementById('desc_en').value);
+            formData.append('tools', document.getElementById('tools').value);
+            formData.append('image', document.getElementById('image').files[0]);
+
+            const res = await fetch('/api/projects', {
+                method: 'POST',
+                body: formData
+            });
+            const data = await res.json();
+            if (data.success) {
+                alert('تمت الإضافة بنجاح');
+                document.getElementById('add-project-form').reset();
+                loadProjects();
+            } else {
+                alert('حدث خطأ');
+            }
+        });
+
+        // Delete Project
+        async function deleteProject(id) {
+            if(confirm('هل أنت متأكد من الحذف؟')) {
+                const res = await fetch('/api/projects/' + id, { method: 'DELETE' });
+                const data = await res.json();
+                if(data.success) loadProjects();
+            }
+        }
+
+        // Logout
+        async function logout() {
+            await fetch('/api/logout', { method: 'POST' });
+            window.location.href = '/login.html';
+        }
+
+        // Init
+        loadProjects();
+    </script>
+</body>
+</html>
